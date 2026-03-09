@@ -1,0 +1,20 @@
+101,Gerald,Magic Kingdom,3,120,true
+102,Sarah,Epcot,2,110,false
+103,Alex,Hollywood Studios,4,130,true
+104,Mike,Animal Kingdom,1,95,false
+105,Emily,Magic Kingdom,2,125,true
+106,Chris,Epcot,3,115,false
+107,Jordan,Hollywood Studios,2,140,true
+108,Taylor,Animal Kingdom,1,100,false
+109,Brandon,Magic Kingdom,4,135,true
+110,Ashley,Epcot,2,118,false
+111,Kevin,Hollywood Studios,3,145,true
+112,Megan,Animal Kingdom,2,98,false
+113,Daniel,Magic Kingdom,1,122,true
+114,Olivia,Epcot,5,112,false
+115,Jason,Hollywood Studios,2,138,true
+116,Samantha,Animal Kingdom,3,102,false
+117,David,Magic Kingdom,2,127,true
+118,Brianna,Epcot,1,109,false
+119,Nicholas,Hollywood Studios,4,142,true
+120,Kayla,Animal Kingdom,2,97,false
