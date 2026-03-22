@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="DMS_Disney_Ticket_System:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/DMS_Disney_Ticket_System_jar</output-path>
+    <root id="archive" name="DMS_Disney_Ticket_System.jar">
+      <element id="module-output" name="DMS_Disney_Ticket_System" />
+    </root>
+  </artifact>
+</component>

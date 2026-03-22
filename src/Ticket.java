@@ -41,7 +41,27 @@ public class Ticket {
     }
 
     public Ticket updateGuestName(String newName) {
-        guestName = newName;
+        this.guestName = newName;
+        return this;
+    }
+
+    public Ticket updatePark(String newPark) {
+        this.park = newPark;
+        return this;
+    }
+
+    public Ticket updateDays(int newDays) {
+        this.days = newDays;
+        return this;
+    }
+
+    public Ticket updatePricePerDay(double newPrice) {
+        this.pricePerDay = newPrice;
+        return this;
+    }
+
+    public Ticket updateParkHopper(boolean newParkHopper) {
+        this.parkHopper = newParkHopper;
         return this;
     }
 

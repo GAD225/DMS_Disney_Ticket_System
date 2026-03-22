@@ -8,9 +8,30 @@ public class TicketManager {
         tickets = new ArrayList<>();
     }
 
-    public String createTicket(Ticket ticket) {
+    public boolean addTicket(Ticket ticket) {
+        if (ticket == null) {
+            return false;
+        }
+
+        if (findTicketById(ticket.getTicketId()) != null) {
+            return false;
+        }
+
         tickets.add(ticket);
-        return "Ticket added successfully.";
+        return true;
+    }
+
+    public int getTicketCount() {
+        return tickets.size();
+    }
+
+    public Ticket findTicketById(int id) {
+        for (Ticket ticket : tickets) {
+            if (ticket.getTicketId() == id) {
+                return ticket;
+            }
+        }
+        return null;
     }
 
     public String displayTickets() {
@@ -27,40 +48,79 @@ public class TicketManager {
         return output;
     }
 
-    public String updateTicket(int id, String newName) {
-        for (Ticket ticket : tickets) {
-            if (ticket.getTicketId() == id) {
-                ticket.updateGuestName(newName);
-                return "Ticket updated.";
-            }
-        }
-
-        return "Ticket not found.";
-    }
-
-    public String deleteTicket(int id) {
+    public boolean deleteTicket(int id) {
         for (int i = 0; i < tickets.size(); i++) {
             if (tickets.get(i).getTicketId() == id) {
                 tickets.remove(i);
-                return "Ticket deleted.";
+                return true;
             }
         }
 
-        return "Ticket not found.";
+        return false;
+    }
+
+    public boolean updateGuestName(int id, String newName) {
+        Ticket ticket = findTicketById(id);
+
+        if (ticket == null || newName == null || newName.trim().isEmpty()) {
+            return false;
+        }
+
+        ticket.updateGuestName(newName);
+        return true;
+    }
+
+    public boolean updatePark(int id, String newPark) {
+        Ticket ticket = findTicketById(id);
+
+        if (ticket == null || newPark == null || newPark.trim().isEmpty()) {
+            return false;
+        }
+
+        ticket.updatePark(newPark);
+        return true;
+    }
+
+    public boolean updateDays(int id, int newDays) {
+        Ticket ticket = findTicketById(id);
+
+        if (ticket == null || newDays <= 0) {
+            return false;
+        }
+
+        ticket.updateDays(newDays);
+        return true;
+    }
+
+    public boolean updatePricePerDay(int id, double newPrice) {
+        Ticket ticket = findTicketById(id);
+
+        if (ticket == null || newPrice < 0) {
+            return false;
+        }
+
+        ticket.updatePricePerDay(newPrice);
+        return true;
+    }
+
+    public boolean updateParkHopper(int id, boolean newParkHopper) {
+        Ticket ticket = findTicketById(id);
+
+        if (ticket == null) {
+            return false;
+        }
+
+        ticket.updateParkHopper(newParkHopper);
+        return true;
     }
 
     public double calculateRevenue() {
-        double revenue = 0;
+        double revenue = 0.0;
 
         for (Ticket ticket : tickets) {
             revenue += ticket.calculateTotalCost();
         }
 
         return revenue;
-    }
-
-    public String addBatchTicket(Ticket ticket) {
-        tickets.add(ticket);
-        return "Batch ticket added.";
     }
 }
